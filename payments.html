@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopHub - Online Shopping</title>
+    <title>ShopHub - Payment Details</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
             <div class="logo">ShopHub</div>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -28,21 +28,34 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to ShopHub</h1>
-            <p>Discover amazing products at great prices</p>
-            <button class="cta-btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products">
+    <!-- Payments Section -->
+    <section class="payments">
         <div class="container">
-            <h2>Featured Products</h2>
-            <div class="products-grid" id="products-grid">
-                <!-- Products will be populated by JavaScript -->
+            <div class="form-container">
+                <h2>Payment Details</h2>
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="qr-upload">Upload QR Code:</label>
+                        <input type="file" id="qr-upload" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bank-name">Bank Name:</label>
+                        <input type="text" id="bank-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="account-number">Account Number:</label>
+                        <input type="text" id="account-number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="account-holder">Account Holder Name:</label>
+                        <input type="text" id="account-holder" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ifsc">IFSC Code:</label>
+                        <input type="text" id="ifsc" required>
+                    </div>
+                    <button type="submit" class="btn">Save Payment Details</button>
+                </form>
             </div>
         </div>
     </section>
@@ -81,5 +94,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="payments.js"></script>
 </body>
 </html>
